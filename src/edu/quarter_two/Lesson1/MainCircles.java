@@ -2,9 +2,8 @@ package edu.quarter_two.Lesson1;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Random;
 
-public class MainCircles extends JFrame {
+public class MainCircles<setBackground> extends JFrame {
     private static final int POS_X = 400;
     private static final int POS_Y = 200;
     private static final int WINDOW_WIDTH = 800;
@@ -31,12 +30,6 @@ public class MainCircles extends JFrame {
         setVisible(true);
     }
 
-    private void setBackground(GameCanvas canvas) {
-        Random rn = new Random();
-        Color c = new Color(rn.nextInt(256), rn.nextInt(256), rn.nextInt(256));
-        canvas.setBackground(c);
-    }
-
     private void initApplication() {
         for (int i = 0; i < sprites.length; i++) {
             sprites[i] = new Ball();
@@ -46,7 +39,7 @@ public class MainCircles extends JFrame {
     public void onDrawFrame(GameCanvas canvas, Graphics g, float deltaTime) {
         update(canvas, deltaTime);
         render(canvas, g);
-        setBackground(canvas);
+        Background.setBackground(canvas);
     }
 
     private void update(GameCanvas canvas, float deltaTime) {
