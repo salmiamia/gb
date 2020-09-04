@@ -13,7 +13,7 @@ public class GameCanvas extends JPanel {
         lastFrameTime = System.nanoTime();
     }
 
-    @Override
+        @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         long currentTime = System.nanoTime();
